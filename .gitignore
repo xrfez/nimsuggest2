@@ -1,0 +1,39 @@
+# Nim build artifacts
+nimcache/
+*.exe
+*.pdb
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.o
+*.obj
+
+# Binary outputs
+/bin/*
+!/bin/.gitkeep
+/src/nimsuggest2
+/tests/test_*
+!/tests/*.nim
+/examples/benchmark
+/examples/debug_*
+/examples/run_*
+
+# Test artifacts  
+/tests/test_*/
+/test_*/
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Documentation
+/htmldocs/
+/docs/html/
+
+# Nimble
+nimbledeps/
