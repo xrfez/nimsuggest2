@@ -1,3 +1,13 @@
+#[**********************************************************************
+*                            nimsuggest2                              *
+*                                                                     *
+*  A fast, reliable token-based IDE tool for Nim                      *
+*                                                                     *
+*  Copyright (c) 2025 Joshua Fenner                                   *
+*                                                                     *
+*  Licensed under the MIT License. See LICENSE file for details.      *
+**********************************************************************]#
+
 ## Main entry point for nimsuggest2
 ## A fast, reliable token-based IDE tool for Nim
 
