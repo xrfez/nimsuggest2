@@ -12,7 +12,16 @@
 ## A fast, reliable token-based IDE tool for Nim
 
 import std/[os, strutils, sets, parseopt]
-import nimsuggest2/[tokenizer, symbols, imports, cache, project, queries, server]
+import nimsuggest2/[tokenizer, symbols, imports, cache, project, queries, server_sync]
+
+# Use server_sync as the main server module
+type Server = server_sync.Server
+type ServerMode = server_sync.ServerMode
+const smStdin = server_sync.smStdin
+const smTcp = server_sync.smTcp
+
+proc newServer(mode: ServerMode, port: int = 6000, emitEof: bool = true): Server =
+  server_sync.newServer(mode, port, emitEof)
 
 proc findProjectFile(startPath: string): string =
   ## Find project file by walking up directory tree
@@ -192,8 +201,8 @@ when isMainModule:
         protocolVersion = 4
       of "tester":
         testerMode = true
-        useStdin = true
         emitEof = true
+        # Don't force stdin mode - let --stdin or --autobind/--port determine the mode
       of "epc":
         epcMode = true
         useTcp = true

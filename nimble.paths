@@ -1,1 +1,2 @@
---noNimblePath
+# Allow nimble packages (needed for unittest2 and other dependencies)
+# --noNimblePath

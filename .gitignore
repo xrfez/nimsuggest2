@@ -37,3 +37,5 @@ nimcache/
 
 # Nimble
 nimbledeps/
+
+examples/
